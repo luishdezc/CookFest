@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     recetas.forEach(r => {
       const a = document.createElement('a');
-      a.href = `/Receta?id=${r._id}`;
+      a.href = `/receta?id=${r._id}`;
       a.innerHTML = `
         <div class="resultado-receta">
           <div class="imagen-mini">

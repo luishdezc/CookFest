@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const div = document.createElement('div');
     div.className = `carousel-item${i===0?' active':''}`;
     div.innerHTML = `
-      <a href="/Receta?id=${r._id}">
+      <a href="/receta?id=${r._id}">
         <img src="${r.imagenUrl||'default.jpg'}" width="300" height="200" style="object-fit:cover;" class="d-block mx-auto" alt="${r.titulo}">
       </a>
       <div class="carousel-caption"><h5>${i+1}. ${r.titulo}</h5></div>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const col = document.createElement('div');
     col.className = 'col';
     col.innerHTML = `
-      <a href="/Receta?id=${r._id}" class="text-decoration-none text-dark">
+      <a href="/receta?id=${r._id}" class="text-decoration-none text-dark">
         <div class="card h-100 border-0 shadow-sm">
           <img src="${r.imagenUrl||'default.jpg'}" class="card-img-top img-receta-fija" alt="${r.titulo}">
           <div class="card-body p-2">

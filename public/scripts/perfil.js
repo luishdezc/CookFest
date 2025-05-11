@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <span class="badge bg-info text-dark">${receta.tiempoTotal || '0'} min</span>
                 <span class="badge bg-warning text-dark">${receta.costo || '$'}</span>
               </p>
-              <a href="/Receta?id=${receta._id}" class="btn btn-sm btn-outline-danger mt-2">Ver receta</a>
+              <a href="/receta?id=${receta._id}" class="btn btn-sm btn-outline-danger mt-2">Ver receta</a>
             </div>
           </div>
         `;
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   </span>
                 </div>
               </div>
-              <a href="/Receta?id=${receta._id}" class="btn btn-sm btn-outline-danger mt-2">Ver receta</a>
+              <a href="/receta?id=${receta._id}" class="btn btn-sm btn-outline-danger mt-2">Ver receta</a>
             </div>
           </div>
         `;

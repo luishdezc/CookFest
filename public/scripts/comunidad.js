@@ -53,7 +53,7 @@ async function loadPosts(sortOrder = 'recent') {
       let imgHtml = '';
       if (p.recetaId) {
         imgHtml = `
-          <a href="/Receta?id=${p.recetaId._id}">
+          <a href="/receta?id=${p.recetaId._id}">
             <img
               src="${p.recetaId.imagenUrl || 'default.jpg'}"
               class="img-fluid post-img mb-3"

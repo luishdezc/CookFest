@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const col = document.createElement('div');
       col.className = 'col-md-4';
       col.innerHTML = `
-        <a href="/Receta?id=${r._id}">
+        <a href="/receta?id=${r._id}">
           <img src="${r.imagenUrl || ''}" class="d-block w-100" alt="${r.titulo}">
         </a>
       `;
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const col = document.createElement('div');
       col.className = 'col-md-4';
       col.innerHTML = `
-        <a href="/Receta?id=${r._id}">
+        <a href="/receta?id=${r._id}">
           <img src="${r.imagenUrl || ''}" class="d-block w-100" alt="${r.titulo}">
         </a>
       `;
