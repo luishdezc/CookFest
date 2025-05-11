@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/navbar.css">
+   <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    #cookie-banner p { margin: 0; font-size: 0.9rem; }
+    #cookie-banner button {
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <span class="material-symbols-outlined text-white">dining</span>
+      <a class="navbar-brand text-white fw-bold" href="/home">CookFest</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/recetas">
+              <span class="material-symbols-outlined">skillet</span>
+              Recetas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/comunidad">
+              <span class="material-symbols-outlined">groups</span>
+              Comunidad
+            </a>
+          </li>
+        </ul>
+  
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <form class="d-flex" id="formSearchIndex">
+              <input
+                class="form-control me-2"
+                id="searchQuery"
+                type="search"
+                placeholder="Buscar..."
+                aria-label="Buscar"
+              >
+              <button class="btn text-white" type="submit">
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </form>
+          </li>
+  
+          <li id="adminTab" class="nav-item ms-3" style="display:none;">
+            <a class="btn btn-outline-light" href="/admin">
+              <span class="material-symbols-outlined">admin_panel_settings</span>
+              Admin
+            </a>
+          </li>
+  
+          <li id="loginTab" class="nav-item ms-3">
+            <a class="btn btn-light" href="/login">Iniciar Sesión</a>
+          </li>
+
+          <li id="registerTab" class="nav-item ms-2">
+            <a class="btn btn-outline-light" href="/register">Registrarme</a>
+          </li>
+
+          <li id="userTab" class="nav-item ms-3" style="display:none;"></li>
+
+          <li id="logoutTab" class="nav-item ms-2" style="display:none;">
+            <button id="btnLogout" class="btn btn-outline-light">Cerrar Sesión</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>  
+
+  <header class="bg-light text-center py-5">
+    <h1 class="text-dark">Bienvenido a CookFest</h1>
+    <p>Explora, guarda y comparte las mejores recetas</p>
+  </header>
+
+   <div class="container mt-5">
+    <div class="d-flex justify-content-around flex-wrap">
+      <div id="tagsContainer" class="d-flex justify-content-around flex-wrap w-100"></div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <h2 class="mb-3 text-left">Recetas Recientes</h2>
+    <div id="carouselRecetasPopulares" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner" id="popularSlides"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecetasPopulares" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselRecetasPopulares" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+      </button>
+      <div class="carousel-indicators" id="indicatorsPopular"></div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h3 class="text-center" style="color: #5d3200;">Búsquedas más frecuentes esta semana</h3>
+    <div class="tags-container" id="recentTags"></div>
+  </div>
+
+  <div class="container mt-4">
+    <h2 class="mb-3 text-left">Recomendaciones 10/10</h2>
+    <div id="carouselRecetas10" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+      <div class="carousel-inner" id="top10Slides"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecetas10" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselRecetas10" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+      <div class="carousel-indicators" id="indicatorsTop10"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2><strong>Busca por ingredientes</strong></h2>
+    <p>Encuentra recetas con los ingredientes que tienes en tu cocina</p>
+    <div class="card mx-auto" style="max-width: 500px;" id="busqueda">
+        <div id="ingredients-container">
+            <div class="ingredient-input">
+                <span class="ingredient-number">1</span>
+                <input type="text" class="form-control w-50" placeholder="Escribe tu 1er ingrediente">
+                <button class="btn btn-toggle">CON</button>
+                <button class="btn btn-toggle">SIN</button>
+            </div>
+        </div>
+        <button class="btn btn-outline-secondary mt-2" id="add-ingredient">+ Agregar ingrediente</button>
+        <button class="btn btn-primary mt-3">Buscar</button>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="fw-bold text-left">Lee sobre &gt;</h2>
+    <div class="row g-4" id="newsContainer"></div>
+  </div>
+
+  <div id="cookie-banner" class="d-none">
+    <p>
+      Usamos cookies propias y de terceros para mejorar tu experiencia.
+      <a href="/privacy">Más info</a>
+    </p>
+    <div>
+      <button id="btn-reject" class="btn btn-outline-secondary btn-sm">Rechazar</button>
+      <button id="btn-accept" class="btn btn-primary btn-sm">Aceptar</button>
+    </div>
+  </div>
+
+  <footer class="mt-5 py-3 bg-light text-center">
+    <div class="container">
+      <a href="/privacy">Política de privacidad</a> |
+      <a href="/terms">Términos y condiciones</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const banner = document.getElementById('cookie-banner');
+      const accepted = localStorage.getItem('cookiesAccepted');
+      if (!accepted) {
+        banner.classList.remove('d-none');
+      }
+
+      document.getElementById('btn-accept').addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'yes');
+        banner.style.display = 'none';
+      });
+
+      document.getElementById('btn-reject').addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'no');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/index.js"></script>
+  <script src="../scripts/auth.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = window.currentUser; 
+      if (user?.isAdmin) {
+        document.getElementById('adminTab').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

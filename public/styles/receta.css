@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.container {
+    padding: 5px;
+}
+
+.card-info {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.card-info div {
+  text-align: center;
+  flex: 1;
+}
+
+.card-info div:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+.button-group {
+  background-color: #ffe9e9;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.button-group div {
+  text-align: center;
+  cursor: pointer;
+}
+
+.utensilios ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.ingredientes-section {
+  margin-top: 40px;
+  padding-left: 1rem;
+}
+
+.porciones {
+  background-color: #f1ebe7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #5b3d1e;
+}
+
+.ingrediente-item, .paso-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ingrediente-item input[type="checkbox"],
+.paso-item input[type="checkbox"] {
+  accent-color: #e4007c;
+  margin-right: 10px;
+  transform: scale(1.2);
+  margin-top: 5px;
+}
+
+.pasos-section {
+  margin-top: 50px;
+  padding-left: 1rem;
+}
+
+.pasos-section h4 {
+  color: #5b3d1e;
+  font-weight: bold;
+}
+
+.pasos-section h5 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.rating-section {
+  margin-top: 60px;
+  padding-left: 1rem;
+}
+
+.rating-bar {
+  background-color: #f1ebe7;
+  height: 12px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.rating-label {
+  color: #e4007c;
+}
+
+.rating-stars {
+  font-size: 1.6rem;
+  color: #e4007c;
+}
+
+.rating-breakdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.star-outline::before {
+  content: "☆";
+}

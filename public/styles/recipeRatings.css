@@ -1,0 +1,53 @@
+
+.ratings-wrapper {
+  margin-top: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.user-rating {
+  font-size: 1.8rem;
+}
+
+.rate-star {
+  cursor: pointer;
+  color: #ffc107;
+  transition: transform 0.1s;
+}
+
+.rate-star:hover {
+  transform: scale(1.2);
+}
+
+.rate-star.rated {
+  color: #ffc107;
+}
+
+#rating-promedio {
+  color: #e4007c;
+  font-weight: bold;
+}
+
+.ratings-list .card {
+  transition: transform 0.2s;
+  border-left: 3px solid #ffc107;
+}
+
+.ratings-list .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .rating-stats .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .user-rating {
+    font-size: 1.5rem;
+  }
+}

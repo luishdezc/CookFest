@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+h1, h2, h3 {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #8e24aa;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #d81b60;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #6a1b9a;
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+.category-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.carousel-inner .row img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+}   
+.tags-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid #e91e63;
+    color: #e91e63;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 5px;
+}
+.tag:hover {
+    background-color: #e91e63;
+    color: white;
+}
+.card-img {
+    height: 300px;
+    object-fit: cover;
+}
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#busqueda {
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.ingredient-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.ingredient-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5a3e1b;
+}
+.btn-toggle {
+    border: 1px solid #5a3e1b;
+    color: #5a3e1b;
+    transition: 0.3s;
+}
+.btn-toggle.active {
+    background: #5a3e1b;
+    color: white;
+}
+.btn-toggle:hover {
+    background: #7d5a3b;
+    color: white;
+}
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: red;
+    cursor: pointer;
+}

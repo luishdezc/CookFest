@@ -1,0 +1,54 @@
+.carousel-item img {
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+   .img-receta-fija {
+    width: 300px !important;   
+    height: 200px !important;  
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    padding: 10px 20px;
+    bottom: 15px;
+  }
+  .top5-title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .carousel-indicators [data-bs-target] {
+    background-color: #000;
+  }
+  .all-recipes img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none;
+    color: black;
+    font-size: 2rem;
+  }
+  .carousel-control-prev::after,
+  .carousel-control-next::after {
+    display: inline-block;
+    content: '';
+    color: black;
+    font-size: 2rem;
+  }
+  .carousel-control-prev::after { content: '‹'; }
+  .carousel-control-next::after { content: '›'; }
+
+.img-receta {
+  width: 100%;        
+  height: 220px;     
+  object-fit: cover;  
+  border-radius: 0.5rem; 
+}

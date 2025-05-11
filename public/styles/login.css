@@ -1,0 +1,57 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container-fluid {
+    height: 100vh;
+}
+.left-side {
+    background: url('https://s1.1zoom.me/b5050/18/Fruit_Vegetables_Pepper_Tomatoes_Radishes_Pears_530984_3840x2400.jpg') no-repeat center center;
+    background-size: contain;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+.login-box {
+    max-width: 400px;
+    padding: 30px;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.tab.active {
+    font-weight: bold;
+    color: #e4007c;
+}
+.tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #e4007c;
+}
+.input-group-text {
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #e4007c;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #c20069;
+}
